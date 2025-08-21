@@ -1,0 +1,527 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* NAV WRAPPER */
+nav {
+    display: flex;
+    position: fixed;
+    height: 70px;
+    width: 100%;
+    /*background: linear-gradient(to right, #FCA311, #ff6700, #f15025);*/
+    background: #fff;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px 0;
+    flex-wrap: wrap;
+    z-index: 10000;
+}
+
+/* Logo */
+nav .logo {
+    color: #14213D;
+    font-size: 40px;
+    font-weight: 600;
+    letter-spacing: .5px;
+    font-family: "Sedgwick Ave Display", cursive;
+    margin-top: 10px;
+    margin-left: 30px;
+}
+
+/* Links (desktop default) */
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 5px;
+
+}
+
+nav ul li a {
+    color: #14213D;
+    text-decoration: none;
+    font-size: 17px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    padding: 8px 15px;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+nav ul li a.active {
+    color: #ff6700;
+    background: #fff;
+}
+
+nav ul li a:hover {
+    background: #fff;
+}
+
+/* Hamburger Toggle (hidden checkbox) */
+nav .menu-btn i {
+    color: #14213D;
+    font-size: 22px;
+    cursor: pointer;
+    display: none;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1000px) {
+    nav {
+        padding: 0 40px 0 50px;
+    }
+}
+
+/* Show hamburger */
+@media (max-width: 920px) {
+    nav .menu-btn i {
+        display: block;
+    }
+
+    #click:checked~.menu-btn i:before {
+        content: "\f00d";
+    }
+
+    nav ul {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        background: #ffffff;
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        z-index: 10000;
+        /* Big number = on top of everything */
+        display: block;
+        transition: all 0.3s ease;
+    }
+
+    /* Slide in when checked */
+    #click:checked~ul {
+        left: 0;
+    }
+
+    nav ul li {
+        width: 100%;
+        z-index: 998;
+        /* Big number = on top of everything */
+        margin: 20px 0;
+    }
+
+    nav ul li+li {
+        border-left: none;
+        /* override desktop rule */
+        border-top: 3px solid #14213D;
+        /* red horizontal line between items */
+    }
+
+    nav ul li a {
+        width: 100%;
+        margin-left: -100%;
+        margin-top: 20px;
+        color: #FCA311;
+        display: block;
+        font-size: 20px;
+        z-index: 999;
+        /* Big number = on top of everything */
+        transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    #click:checked~ul li a {
+        margin-left: 0px;
+    }
+
+    nav ul li a.active,
+    nav ul li a:hover {
+        background: none;
+        color: #312972;
+    }
+}
+
+/* Heading */
+/* Hero Section for Articles Page */
+.articles-hero {
+    min-height: 20vh;
+    /* tall hero feel */
+    padding: 80px 20px 60px;
+    /* top padding keeps it below fixed nav */
+    /*background-image: url('../images/card.jpg');*/
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+/* Content box */
+.articles-content {
+    max-width: 900px;
+}
+
+/* Large Title */
+.articles-content h2 {
+    font-family: "Honk", system-ui;
+    font-variation-settings:
+        "MORF" 15,
+        "SHLN" 50;
+    font-size: 80px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.25);
+}
+
+/* Tagline text */
+.articles-content p {
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 1.6;
+    font-family: "Honk", system-ui;
+    font-variation-settings:
+        "MORF" 15,
+        "SHLN" 50;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+    .articles-content h2 {
+        font-size: 2.8rem;
+    }
+
+    .articles-content p {
+        font-size: 1.1rem;
+    }
+}
+
+/* 5-card layout Categories */
+.grid5 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 equal columns */
+    grid-auto-rows: 200px;
+    /* base height */
+    gap: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.small5 {
+    background: #ffffff;
+    display: flex;
+    align-items: flex-end;
+    padding: 15px;
+    font-weight: bold;
+}
+
+.recipe-image {
+    aspect-ratio: 3 / 2;
+    overflow: hidden;
+    border: 2px solid #000;
+}
+
+.small5 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Make the first card span bigger */
+.big5 {
+    grid-row: span 2;
+    /* spans 2 rows vertically */
+    grid-column: span 1;
+    /* stays in first column */
+}
+
+.recipe-image {
+    aspect-ratio: 3 / 2;
+    overflow: hidden;
+    border: 2px solid #000;
+}
+
+.big5 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* Popular Categories */
+.popular-categories {
+    padding: 20px 20px 20px;
+}
+
+.pc-title-row {
+    max-width: 1200px;
+    margin: 0 auto 24px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.pc-title-row h2 {
+    margin: 0;
+    font-family: "Sour Gummy", sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    /*font-size: clamp(1.8rem, 2.6vw, 2.6rem);*/
+    font-size: 30px;
+    color: #0b0b0b;
+}
+
+.pc-title-line {
+    flex: 1;
+    height: 4px;
+    background: #fca311;
+    /* yellow line like your screenshot */
+    border-radius: 3px;
+}
+
+/* Grid of circular items */
+.pc-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 40px 50px;
+    /* row gap | column gap */
+}
+
+.pc-item {
+    text-align: center;
+    text-decoration: none;
+    color: #14213D;
+}
+
+.pc-thumb {
+    width: 160px;
+    height: 120px;
+    margin: 0 auto 10px;
+    overflow: hidden;
+    border: 6px solid #ffffff;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.pc-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.pc-item:hover .pc-thumb {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+}
+
+.pc-label {
+    font-weight: 800;
+    letter-spacing: 1px;
+    font-size: 0.95rem;
+}
+
+/* Responsive columns */
+@media (max-width: 1200px) {
+    .pc-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .pc-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .pc-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px 30px;
+    }
+
+    .pc-thumb {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 520px) {
+    .pc-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px 20px;
+    }
+
+    .pc-thumb {
+        width: 130px;
+        height: 130px;
+    }
+}
+
+
+/*for 3 column grid */
+/* Grid of circular items */
+.pcd-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 40px 50px;
+    /* row gap | column gap */
+}
+
+.pcd-item {
+    text-align: center;
+    text-decoration: none;
+    color: #14213D;
+}
+
+.pcd-thumb {
+    width: 350px;
+    height: 350px;
+    margin: 0 auto 10px;
+    overflow: hidden;
+    border: 6px solid #ffffff;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.pcd-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.pcd-item:hover .pcd-thumb {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+}
+
+.pcd-label {
+    font-weight: 800;
+    letter-spacing: 1px;
+    font-size: 0.95rem;
+}
+
+/* Responsive columns */
+@media (max-width: 1200px) {
+    .pcd-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .pcd-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .pcd-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px 30px;
+    }
+
+    .pcd-thumb {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 520px) {
+    .pcd-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px 20px;
+    }
+
+    .pcd-thumb {
+        width: 130px;
+        height: 130px;
+    }
+}
+
+/* FILTERS + SEARCH */
+.filters-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.search-bar {
+    grid-column: span 2;
+    padding: 12px;
+    border: 2px solid #000;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+}
+
+.filter {
+    padding: 12px;
+    border: 2px solid #000;
+    border-radius: 5px;
+    font-size: 16px;
+    background: #fff;
+}
+
+/* RECIPES GRID */
+.recipes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.recipe-card {
+    text-align: center;
+}
+
+.recipe-image {
+    aspect-ratio: 3 / 2;
+    overflow: hidden;
+    border: 2px solid #000;
+}
+
+.recipe-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.recipe-title {
+    margin: 12px 0 5px;
+    font-size: 20px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.recipe-meta {
+    font-size: 14px;
+    color: #333;
+}
