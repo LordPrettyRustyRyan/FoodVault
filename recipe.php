@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Food Vault Article</title>
+  <title>Food Vault Recipes</title>
 
   <link rel="stylesheet" href="css/recipe.css">
 
@@ -24,8 +24,8 @@
 
     <ul>
       <li><a href="#">Home</a></li>
-      <li><a href="#">Recipes</a></li>
-      <li><a href="#" class="active">Articles</a></li>
+      <li><a href="#" class="active">Recipes</a></li>
+      <li><a href="#">Articles</a></li>
       <li><a href="#">Log In</a></li>
     </ul>
   </nav>
@@ -46,33 +46,47 @@
       <h2 id="pc-heading">POPULAR CATEGORIES</h2>
       <span class="pc-title-line" aria-hidden="true"></span>
     </div>
-    <div class="grid5">
-      <div class="big5">
-        <img src="images/1.jpg" alt="Recipe">
-        <h3 class="recipe-title">Street Corn Pasta Salad</h3>
-        <p class="recipe-meta">$5.53 Recipe / $0.69 Serving</p>
-      </div>
-      <div class="small5">
-        <img src="images/2.jpg" alt="Recipe">
-        <h3 class="recipe-title">Street Corn Pasta Salad</h3>
-        <p class="recipe-meta">$5.53 Recipe / $0.69 Serving</p>
-      </div>
-      <div class="small5">
-        <img src="images/3.jpg" alt="Recipe">
-        <h3 class="recipe-title">Street Corn Pasta Salad</h3>
-        <p class="recipe-meta">$5.53 Recipe / $0.69 Serving</p>
-      </div>
-      <div class="small5">
-        <img src="images/4.jpg" alt="Recipe">
-        <h3 class="recipe-title">Street Corn Pasta Salad</h3>
-        <p class="recipe-meta">$5.53 Recipe / $0.69 Serving</p>
-      </div>
-      <div class="small5">
-        <img src="images/5.jpg" alt="Recipe">
-        <h3 class="recipe-title">Street Corn Pasta Salad</h3>
-        <p class="recipe-meta">$5.53 Recipe / $0.69 Serving</p>
-      </div>
+<div class="grid5">
+  <div class="big5 card">
+    <img src="images/1.jpg" alt="Recipe">
+    <div class="overlay">
+      <h3 class="recipe-title">Street Corn Pasta Salad</h3>
+      <p class="recipe-meta">$5.53 Recipe / $0.69 Serving</p>
     </div>
+  </div>
+  <div class="small5 card">
+    <img src="images/2.jpg" alt="Recipe">
+    <div class="overlay">
+      <h3 class="recipe-title">Easy Fish Tacos</h3>
+      <p class="recipe-meta">$10.93 Recipe / $2.73 Serving</p>
+    </div>
+  </div>
+  <div class="small5 card">
+    <img src="images/3.jpg" alt="Recipe">
+    <div class="overlay">
+      <h3 class="recipe-title">Easy Guacamole</h3>
+      <p class="recipe-meta">$4.61 Recipe / $0.46 Serving</p>
+    </div>
+  </div>
+  <div class="small5 card">
+    <img src="images/4.jpg" alt="Recipe">
+    <div class="overlay">
+      <h3 class="recipe-title">Summer Vegetable Pasta</h3>
+      <p class="recipe-meta">$10.21 Recipe / $1.02 Serving</p>
+    </div>
+  </div>
+  <div class="small5 card">
+    <img src="images/5.jpg" alt="Recipe">
+    <div class="overlay">
+      <h3 class="recipe-title">Easy Lemon Cream Pie</h3>
+      <p class="recipe-meta">$4.26 Recipe / $0.53 Per Slice</p>
+    </div>
+  </div>
+</div>
+          <div class="more-button">
+            <button class="fav" href="#">EXPLORE MORE</button>
+</div>
+
   </section>
 
   <section class="popular-categories" aria-labelledby="pc-heading">
@@ -240,3 +254,61 @@
       </div>
     </div>
   </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-container">
+      <!-- Left Section -->
+      <div class="footer-about">
+        <img src="images/logo.png" alt="Logo" class="footer-logo">
+        <div>
+          <h4>FOOD VAULT</h4>
+          <p>Just better food, made easy, smarter, tastier, better choices.</p>
+        </div>
+      </div>
+
+      <!-- Links Section -->
+      <div class="footer-links">
+        <div>
+          <h4>RECIPES</h4>
+          <ul>
+            <li><a href="#">Breakfast</a></li>
+            <li><a href="#">Lunch</a></li>
+            <li><a href="#">Dinner</a></li>
+            <li><a href="#">Snacks</a></li>
+            <li><a href="#">Beverages</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>ARTICLES</h4>
+          <ul>
+            <li><a href="#">Protein Rich</a></li>
+            <li><a href="#">Vegetarian</a></li>
+            <li><a href="#">Low Carbs</a></li>
+            <li><a href="#">Kids Friendly</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>MORE FROM ME</h4>
+          <ul class="socials">
+            <li><a href="#"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+            <li><a href="#"><i class="fab fa-pinterest-p"></i> Pinterest</a></li>
+            <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+            <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+            <li><a href="#"><i class="fab fa-youtube"></i> Youtube</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="footer-bottom">
+      <p>© 2025 Food Vault. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Accessibility Statement</a>
+        <a href="#">Accessibility Options</a>
+      </div>
+    </div>
+  </footer>
