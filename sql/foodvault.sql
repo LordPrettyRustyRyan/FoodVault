@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 27, 2025 at 11:03 PM
+-- Generation Time: Aug 28, 2025 at 08:57 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -31,11 +31,23 @@ CREATE TABLE `articles` (
   `article_id` int(11) NOT NULL,
   `user_id` bigint(20) NOT NULL,
   `title` varchar(255) NOT NULL,
+  `description` text DEFAULT NULL,
   `content` text NOT NULL,
   `read_time` int(11) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `articles`
+--
+
+INSERT INTO `articles` (`article_id`, `user_id`, `title`, `description`, `content`, `read_time`, `created_at`, `updated_at`) VALUES
+(1, 1, 'How to Make Egg Salad Healthier', 'This sandwich staple can be high in fat, cholesterol and calories, but with a few simple tweaks it can be made more nutritious.', 'Eggs and mayo can still be a part of your egg salad mix, just use less and add flavor with other ingredients. The easiest thing you can do is switch to small amounts of a light or reduced-fat mayo. Then, use less egg salad on your sandwich and pile fresh vegetables like lettuce, tomato, cucumber or radishes on your bread slices, wraps and salads.\n\nThere’s even more you can do: I like to be creative by adding flavorful, lower calorie ingredients like Dijon mustard, fresh herbs, sweet pickle relish, roasted red peppers, sun-dried tomatoes, chopped cucumber, cayenne pepper or curry powder to egg salad. My favorite diner in New York City makes an egg salad with fresh tarragon, a touch of mayo, pickled onions and chopped spinach; they also make an egg-less version with tofu. Take your avocado toast to the next level by mixing your chopped egg with diced avocado, tomato and cilantro.\n\nWhen I make egg salad at home, I use 4 eggs, 1 tablespoon of mayonnaise, 1 tablespoon of non-fat Greek yogurt, chopped celery and lots of fresh herbs (basil, dill or parsley), salt, pepper and pinch of smoked paprika. My recipe makes enough for at least three sandwiches. Save a few more calories by making an open-faced sandwich (using only one slice of bread), serving on a whole-wheat English muffin or using lettuce leaves as a wrap.', 2, '2025-08-28 05:53:22', '2025-08-28 05:53:22'),
+(2, 1, 'Are Energy Drinks Really Safe To Drink?', 'While popular, these colorfully marketed cans aren’t often properly regulated, and can have dangerous effects.', 'Not to be confused with sports drinks, energy drinks are a dangerous mix of sugar, supplemental nutrients and stimulants. We won’t keep you in suspense: They’re no good. Here’s why.\n\nThe promise of popping open a can and slurping immediate energy is certainly appealing. Too bad it’s too good to be true. With names like Rockstar, Monster, Red Bull and Bang, energy drinks are marketed to appeal to adolescents, college students and anyone else famously short on sleep. Celebrity endorsements and sponsorships by athletic teams also add to the appeal. Flashy packaging and the fact that you can buy them at any grocery store or gas station further leads consumers to believe they must be safe. Social media has taken this popularity to new heights, making brands like Celsius and Reign sensations on TikTok. Chain restaurants have also cashed in on the popularity of energy drinks by offering their own takes on menus.\n\nBut the dangers of these drinks are real. In 2017, a 16-year-old boy tragically died of a caffeine overdose after drinking a series stimulant-containing beverages.\n\nMany people fail to take stock of the multiple sources of caffeine they ingest, and the consequences are incredibly dangerous. A review published in 2021 linked energy drinks to several adverse cardiovascular and neurological effects that lead to emergency room visits and deaths. Findings from a study published in 2017 also suggest that consumption of energy drinks can be particularly harmful to the developing brains of adolescents and a review from 2023 further supports the need for better regulation of these beverages, especially for children.\n\nWith a few exceptions, energy drinks are sold as dietary supplements, not conventional beverages. This means that these products are not subject to the same scrutinizing U.S. Food & Drug Administration (FDA) safety standards as regular foods and beverages. To know for sure, check the label — if the can lists “supplement facts,” it is a supplement and therefore not properly regulated and the label may be inaccurate. If the drink has a “nutrition facts” label, it has been classified as a beverage and tested for accuracy before being sold. While this is an additional layer of protection, it doesn’t indicate that the energy drink is a healthy choice or that the ingredients may not cause harm — all it means is that what is listed on the can is, in fact, in the can.\n\nAt best, these drinks are too high in sugar, but many brands also include a long list of unnecessary added vitamins and minerals. The calorie-free versions (full of artificial sweeteners) are also suspect — how can something with no calories provide energy? It’s easy to confuse a stimulant buzz with having true energy. The major difference is that energy from calories is real fuel, and stimulants only give you the illusion of energy by having a short-lived effect on your neurological system and heart rate.\n\nHere are just a few of the potentially dangerous ingredients commonly found in energy drinks:\n\nCaffeine: Can cause increased heart rate, anxiety, sleep disturbances, upset stomach and dehydration. Many drinks have two to five times more caffeine than a cup of coffee.\n\nGuarana: A caffeine-like product that compounds the stimulant effect with limited evidence of safety. It has four to six times more caffeine than coffee beans.\n\nTaurine: Promoted to help with focus, taurine may have a sedative effect. It is used to treat high blood pressure and congestive heart failure. Very little is known about the safety of high-dose or long-term use.\n\nL-Theanine: Another poorly studied ingredient, especially when mixed with caffeine. Side effects can include headache, sleepiness and blood pressure shifts.\n\nVitamins: Excessive doses of several vitamins, including common energy drink additives niacin and vitamin B6, can be toxic in large doses. Toxicity symptoms of B6 can cause numbness and tingling in fingers and toes, and too much niacin can cause headaches, nausea and liver damage.\n\nIt has also become trendy to mix energy drinks with alcohol; this creates a dangerous combination of “uppers” and “downers” that may result in dangerous cardiovascular and neurological side effects.\n\nBottom Line: Cracking open an energy drink isn’t all it’s cracked up to be. Pay attention to product labeling and then decide whether it’s best to avoid the drink altogether or proceed with extreme caution.', 7, '2025-08-28 05:58:25', '2025-08-28 05:58:25'),
+(3, 1, 'Should Breakfast Really Be Your Biggest Meal of the Day?', 'Generally yes, but it depends on a few things.', 'If breakfast means the first meal of the day – as technically the word means to ‘‘break the fast,’’ then there are a few instances in which it should not be the biggest.\r\n\r\nFor some people, the only time they can squeeze in exercise is first thing in the morning. But they need food to fuel a workout. If your breakfast doubles as a pre-workout meal it shouldn’t be the biggest. Exercising on a full stomach can cause discomfort, from feeling sluggish to having cramps. (Hold off on your workout for a least two hours after a substantial meal.)\r\n\r\nTo fuel a moderate to intense morning workout, eat a simple snack. The snack should be fairly quick-digesting, with carbohydrates and some protein (less than 10 grams) and maybe a little fat. If you’re trying to get more protein into your day, this snack is the first opportunity to get a few grams of protein.\r\n\r\nHere are some pre-workout snacks to eat 45 minutes to one hour before working out:\r\n\r\n- Banana with peanut butter\r\n- Fruit with a hard-boiled egg or a small container of yogurt\r\n- Café latte (with protein-rich dairy milk or soy beverage) with collagen\r\n- Small smoothie\r\n- One or two fruit-nut butter protein balls\r\n- Half of a protein bar\r\n\r\nAnother time it does not make sense for the first meal of the day to be the biggest one is if you have zero appetite in the morning. Many people struggle to eat after waking up, but if your brain is making decisions, it needs nutrients (not just coffee).\r\n\r\n“Not eating within the first 30 to 45 minutes of waking can increase the stress hormone cortisol. It may also increase cravings later in the day, like the body is trying to make up for the food it missed first thing in the morning,” explains Leah Kleinschrodt, MS, RD, LD Dietitian at Nutritional Weight & Wellness.\r\n\r\nEating soon after you wake up helps cortisol levels make their natural decline, leaving you less stressed and ready to take on the day.\r\n\r\nFor those who don’t feel like eating much first thing in the morning, any of the pre-workout snacks above are good choices. Wagner also suggests drinking part of a packaged protein shake or high-protein chocolate milk, then finishing the rest of the beverage later in the morning when you make time for a bigger breakfast.\r\n\r\nWhen Should Breakfast Be the Biggest Meal of the Day?\r\n\r\nBreakfast should probably be the biggest meal of the day most of the time.\r\n\r\nEat a big breakfast:\r\n\r\n- After your morning workout as a post-workout meal\r\n- If you don’t do morning workouts, try to eat within 45 minutes to one hour of waking\r\n- If you’re not hungry right after waking or don’t have time, eat a small snack, then eat a big breakfast mid-morning when you have more time\r\n\r\nThe research that supports eating a big breakfast is stacking up. There are benefits for satiety. In one study, people who ate a protein-rich breakfast (25 to 30 grams) were less hungry throughout the day.\r\n\r\nHigher amounts of protein in a post-workout breakfast especially after resistance training can help with building muscle. Some researchers have suggested that especially for women, higher amounts of protein (around 30 grams) can be helpful; as this amount of high-quality protein contains enough of the amino acid leucine to stimulate muscle synthesis.\r\n\r\nEating a substantial breakfast can affect your energy levels for the whole rest of the day. In emerging research, scientists found a connection between eating breakfast and having more energy for physical activity and endurance exercise later in the day.\r\n\r\nBreakfast should almost certainly be bigger than the nighttime meal. A big dinner before bed can lead to stomach discomfort. Spacing the eating of protein evenly throughout the day may lead to better weight management, instead of having one large meal at night.\r\n\r\nIf it works best for your schedule to have a bigger lunch – along with a substantial breakfast, the point is that it’s a good idea to space protein foods throughout the day.', 10, '2025-08-28 06:33:56', '2025-08-28 06:33:56'),
+(4, 1, '7 Healthy Breakfasts You Can Make for Less Than $2', 'Breakfast can often feel like the most rushed meal of the day, where convenience takes precedence. While that usually involves opting for less-healthy foods, we\'re confident you can jump-start your morning with a quick, nutritious meal that costs less than $2 per serving. These recipes prove that there are more than enough options to get you through the week feeling good from the inside out', 'Simple Scrambled Eggs, $1.83 per serving \r\nWhen it comes to scrambled eggs, less is more. Cooking beaten eggs over low heat ensures that they stay soft rather than rubbery. Mix in your favorite cheese at the end for an extra-luscious finish. \r\nEgg-in-a-Hole, $0.64 per serving \r\nRee Drummond\'s recipe for an egg-in-a-hole needs no special equipment; you can just use the rim of a cup to make a hole in the bread if you don\'t have a biscuit cutter. This fun yet simple way to serve eggs and toast together is sure to be a family favorite. \r\nAvocado Toasts, $1.99 per serving \r\nOur take on the ever-popular avocado toast enhances the flavor by rubbing a clove of garlic on the crisped-up bread and seasoning with salt and pepper before topping with the avocado mash. For a final flourish, sprinkle flaky sea salt and crushed red pepper flakes over the top. \r\nWhole30 Bacon and Egg Cups (pictured above), $1.80 per serving \r\nWhether you\'re feeding a crowd or just yourself, these petite cups are fun and easy to make. Packed full of protein, the bacon and eggs sit on top of potato slices and are baked in a muffin tin for neat stacking. The rendered fat from the bacon provides the perfect amount of oil to cook the potato and bell pepper pieces. \r\nHash Browns Makeover, $1.97 per serving \r\nInstead of making individual hash browns, add the grated veggies to a hot skillet to make a large potato pancake that you can slice and serve. Parsnip and fresh scallions add a crunchy, mellow bite that complement the flavor of the potatoes. \r\nOvernight Oats, $1.75 per serving \r\nBreakfast-on-the-go has never been easier with overnight oats. Soak rolled oats in your milk of choice in individual jars before you go to sleep, then add in your favorite toppings such as granola, fruit or cinnamon in the morning. \r\nOatmeal Chocolate Chip Peanut Butter Banana Breakfast Cookies, $1.25 per serving \r\nWho says you can\'t have cookies for breakfast? You can feel good about pairing these easy-to-make treats with your morning cup of coffee. This recipe is chockful of goodies right there in the name.\r\n', 8, '2025-08-28 06:48:03', '2025-08-28 06:48:03'),
+(5, 1, 'Get More Vegetables Into Your Meals', 'Tips and tricks to sneak more vegetables into your daily meals and snacks, even if you\'re not a fan.', 'Not a vegetable lover? You’re not alone. Only 10% of people in the U.S. eat the recommended amount, which is 4½ cups a day.\r\n\r\nIf you don\'t like one vegetable, that doesn\'t mean you won\'t like a different one. The more you try a vegetable, the more chance you have of liking it. So, keep trying.\r\n\r\nHere are some creative ways to get more vegetables into your meals and snacks. \r\n\r\nShred. Vegetables that can be easily shredded, such as zucchini, beets, carrots or parsnips, can be added to whole-grain muffins, pancakes, soups, stir-fries, pasta sauce and casseroles. These sneaky vegetables boost flavor, texture and nutrition, often without anyone knowing they’re there. Use a box grater, hand grater or food processor to shred vegetables. Or, for convenience, look for bags of pre-shredded produce in the grocery store.\r\n\r\nSwap. Mushrooms add a savory flavor and texture, especially to meats, along with added nutrients. Replace half the amount of ground beef or turkey for burgers, meatloaf and meatballs with cooked chopped mushrooms. Here’s how: First, finely chop the mushrooms. Next, heat a small amount of olive oil over medium heat and cook the mushrooms for 3 minutes, or until soft. Once they have cooled, gently mix them with your ground meat. Continue with your recipe.\r\n\r\nPuree. Cook and puree orange vegetables, such as butternut squash, sweet potatoes and carrots to add to cheesy dishes, such as macaroni and cheese, lasagna, or baked enchiladas. Simply replace half of the cheese with the pureed vegetables to help reduce some of the saturated fat and sodium found in your meal. It’s that easy. To make a smooth, flavorful and filling soup, process the vegetables with some fat-free, low-sodium broth in a food processor or a blender until smooth.\r\n\r\nBlend. You can load lots of fruit and vegetables into delicious and refreshing smoothies. Start with adding frozen fruit, such as sliced banana, berries, cubed melon and chopped mango into a food processor or blender. Next, add some vegetables, such as spinach, kale, and cooked carrot rounds or chopped squash. Then, add a few splashes of fat-free/low-fat milk, a few dollops of plain yogurt and/or a splash of juice or water. Put in some freshly grated gingerroot or ground ginger, ground cinnamon and ice cubes. Process until smooth. Experiment with different fruits and vegetables to make many delicious combinations.', 6, '2025-08-28 06:54:17', '2025-08-28 06:54:17');
 
 -- --------------------------------------------------------
 
@@ -48,6 +60,22 @@ CREATE TABLE `article_categories` (
   `name` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `article_categories`
+--
+
+INSERT INTO `article_categories` (`category_id`, `name`) VALUES
+(5, 'Beverages'),
+(8, 'Breakfast'),
+(9, 'Budget-Friendly'),
+(7, 'Energy Drinks'),
+(6, 'Food Safety'),
+(4, 'Health & Nutrition'),
+(1, 'Healthy Eating'),
+(3, 'Low-Calorie Recipes'),
+(2, 'Sandwiches'),
+(10, 'Vegetables');
+
 -- --------------------------------------------------------
 
 --
@@ -58,6 +86,29 @@ CREATE TABLE `article_category_map` (
   `article_id` int(11) NOT NULL,
   `category_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `article_category_map`
+--
+
+INSERT INTO `article_category_map` (`article_id`, `category_id`) VALUES
+(1, 1),
+(1, 2),
+(1, 3),
+(2, 4),
+(2, 5),
+(2, 6),
+(2, 7),
+(3, 1),
+(3, 4),
+(3, 8),
+(4, 1),
+(4, 4),
+(4, 8),
+(4, 9),
+(5, 1),
+(5, 4),
+(5, 10);
 
 -- --------------------------------------------------------
 
@@ -99,6 +150,17 @@ CREATE TABLE `article_images` (
   `caption` varchar(255) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `article_images`
+--
+
+INSERT INTO `article_images` (`image_id`, `article_id`, `image_url`, `caption`, `created_at`) VALUES
+(1, 1, 'http://localhost/foodvault/images/egg_salad_healthy.jpg', 'A healthier twist on classic egg salad with fresh herbs and veggies', '2025-08-28 05:55:46'),
+(2, 2, 'http://localhost/foodvault/images/energy_drinks_dangers.jpg', 'Energy drinks lined up on a shelf — flashy packaging, hidden risks', '2025-08-28 05:59:48'),
+(3, 3, 'https://example.com/images/breakfast-biggest-meal.jpg', 'A hearty protein-rich breakfast with eggs, toast, and fresh fruit.', '2025-08-28 06:36:15'),
+(4, 4, 'https://example.com/images/breakfast-under-2.jpg', 'Healthy and budget-friendly breakfast options under $2.', '2025-08-28 06:49:12'),
+(5, 5, 'https://example.com/images/veggies-meals.jpg', 'Creative ways to add vegetables into daily meals.', '2025-08-28 06:55:52');
 
 -- --------------------------------------------------------
 
@@ -812,13 +874,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `articles`
 --
 ALTER TABLE `articles`
-  MODIFY `article_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `article_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `article_categories`
 --
 ALTER TABLE `article_categories`
-  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `article_comments`
@@ -836,7 +898,7 @@ ALTER TABLE `article_favorites`
 -- AUTO_INCREMENT for table `article_images`
 --
 ALTER TABLE `article_images`
-  MODIFY `image_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `image_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `article_ratings`
